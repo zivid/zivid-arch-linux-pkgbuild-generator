@@ -1,0 +1,23 @@
+# Maintainer: Mathias Nedrebø <mathias.nedrebo@zivid.com>
+
+pkgname={name}
+pkgver='{pkgver}'
+pkgrel=1
+pkgdesc='{description}'
+arch=('x86_64')
+license=('custom')
+url={url}
+
+depends=({dependencies})
+optdepends=({optional_dependencies})
+
+groups=(zivid-all)
+
+source=({source})
+sha256sums=({sha256sum})
+
+options=(!strip)
+
+package() {{
+    bsdtar -xf data.tar.*z -C "${{pkgdir}}"
+}}

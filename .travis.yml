@@ -1,0 +1,16 @@
+language: minimal
+
+services:
+  - docker
+  
+before_install:
+  - docker pull archlinux/base
+
+script:
+  - docker run
+      --volume $PWD:/host
+      --workdir /host/continuous-integration
+      archlinux/base
+      bash -c "./setup.sh &&
+               ./lint.sh &&
+               ./test.sh"
