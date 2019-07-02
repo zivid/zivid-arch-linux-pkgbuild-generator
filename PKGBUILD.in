@@ -9,8 +9,6 @@ license=('custom')
 url={url}
 
 depends=({dependencies})
-optdepends=({optional_dependencies})
-
 groups=(zivid-all)
 
 source=({source})

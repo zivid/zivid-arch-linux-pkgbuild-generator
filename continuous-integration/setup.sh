@@ -12,6 +12,7 @@ pacman -Syu --noconfirm --needed \
        file \
        flake8 \
        grep \
+       intel-compute-runtime \
        python-black \
        python-pip \
        python-pylint \
