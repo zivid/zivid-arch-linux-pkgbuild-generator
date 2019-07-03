@@ -25,20 +25,9 @@ class Pkgbuild:
 
     dependencies = {
         "zivid-telicam-sdk": (),
-        "zivid": ("zivid-telicam-sdk",),
+        "zivid": ("zivid-telicam-sdk", "opencl-driver"),
         "zivid-studio": ("zivid",),
         "zivid-tools": ("zivid",),
-    }
-
-    optional_dependencies = {
-        "zivid-telicam-sdk": (),
-        "zivid": (
-            "'opencl-nvidia: To use Zivid with Nvidia GPUs'",
-            "'opencl-amd: To use Zivid with Nvidia GPUs'",
-            "'intel-compute-runtime: To use Zivid with Intel GPUs'",
-        ),
-        "zivid-studio": (),
-        "zivid-tools": (),
     }
 
     def __init__(self, base_dir: Path, template_file: Path):
@@ -60,7 +49,6 @@ class Pkgbuild:
             description=self.description,
             url=self.company_url,
             dependencies=" ".join(self.dependencies[package_name]),
-            optional_dependencies=" ".join(self.optional_dependencies[package_name]),
             source=source_url,
             sha256sum=_sha256sum(source_url),
         )

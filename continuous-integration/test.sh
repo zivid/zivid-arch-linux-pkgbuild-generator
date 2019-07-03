@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_DIR=$(realpath "$SCRIPT_DIR/..")
-TMP_DIR=$(sudo -u nobody mktemp --tmpdir --directory zivid-pkgbuild-testing-XXXX)
+TMP_DIR=$(sudo -u nobody mktemp --tmpdir --directory zivid-pkgbuild-testing-XXXX) || exit $?
 
 # Elevate permissions
 if [ $EUID != 0 ]; then
@@ -32,7 +32,6 @@ function test_package {
     package=$1
     pushd $TMP_DIR/$package || exit $?
     PKGEXT=.tar sudo -E -u nobody makepkg || exit $?
-    ls -la
     pacman -U --noconfirm ./*$package*.tar || exit $?
     popd || exit $?
     rm -r ${TMP_DIR:?}/$package

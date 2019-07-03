@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_DIR=$(realpath "$SCRIPT_DIR/..")
-VENV=$(mktemp --tmpdir --directory zivid-pkgbuild-build-env-XXXX)
+VENV=$(mktemp --tmpdir --directory zivid-pkgbuild-build-env-XXXX) || exit $?
 
 if [ -z "$1" ]; then
     echo Usage: $0 out-dir
@@ -26,7 +26,7 @@ python -m venv $VENV || exit $?
 source $VENV/bin/activate || exit $?
 pip install --no-cache-dir -r $ROOT_DIR/requirements.txt || exit $?
 
-zividVersion=1.3.0+bb9ee328-10
+zividVersion=1.4.0+956f554d-12
 for zividPackage in zivid zivid-studio zivid-tools; do
     generate $zividVersion $zividPackage $zividVersion || exit $?
 done
