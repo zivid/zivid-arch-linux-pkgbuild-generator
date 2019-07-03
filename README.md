@@ -1,5 +1,5 @@
 
-# Scrips to generate PKGBUILDs for Arch Linux
+# Scripts to generate PKGBUILDs for Arch Linux
 
 [![Build Status](https://travis-ci.org/zivid/arch-linux-pkgbuild-generator.svg?branch=master)](https://travis-ci.org/zivid/arch-linux-pkgbuild-generator)
 
