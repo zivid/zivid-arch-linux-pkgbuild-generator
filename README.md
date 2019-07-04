@@ -14,3 +14,15 @@ See https://aur.archlinux.org/packages/?K=zivid for the list of Zivid packages.
 These packages can easily be installed by using one of the [AUR helpers](https://wiki.archlinux.org/index.php/AUR_helpers) like [yaourt](https://aur.archlinux.org/packages/yaourt).
 
     yaourt -S --noconfirm zivid-studio zivid-tools
+
+## Uploading new versions to AUR
+
+1. Update `zividVersion` in `scripts/generate_all_pkgbuilds.sh`
+2. Run the tests. See [.travis.yml](.travis.yml).
+3. Run `./scripts/update_aur.sh`.
+
+## Registering new packages
+
+The list of packages to be uploaded is found in `scripts/generate_all_pkgbuilds.sh`, the list of dependencies can be found in `scripts/generate_pkgbuild.py`.
+
+Extend those lists when Zivid releases more packages.
