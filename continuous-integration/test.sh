@@ -10,7 +10,7 @@ if [ $EUID != 0 ]; then
     exit $?
 fi
 
-sudo -u nobody $ROOT_DIR/scrips/generate_all_pkgbuilds.sh $TMP_DIR || exit $?
+sudo -u nobody $ROOT_DIR/scripts/generate_all_pkgbuilds.sh $TMP_DIR || exit $?
 
 function test_zivid-telicam-sdk {
     [[ -f /opt/TeliCamSDK/lib/libTeliCamApi_64.so ]] || exit 1
