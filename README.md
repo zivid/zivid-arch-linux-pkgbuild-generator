@@ -1,7 +1,7 @@
 
 # Scripts to generate PKGBUILDs for Arch Linux
 
-[![Build Status](https://travis-ci.org/zivid/arch-linux-pkgbuild-generator.svg?branch=master)](https://travis-ci.org/zivid/arch-linux-pkgbuild-generator)
+[![Build Status][ci-badge]][ci-url]
 
 This repository contains the scripts uses to generate [Zivid](https://www.zivid.com/) [PKGBUILD](https://wiki.archlinux.org/index.php/PKGBUILD)s for [Arch Linux](https://www.archlinux.org/) and to upload them to [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository).
 
@@ -26,3 +26,6 @@ These packages can easily be installed by using one of the [AUR helpers](https:/
 The list of packages to be uploaded is found in `scripts/generate_all_pkgbuilds.sh`, the list of dependencies can be found in `scripts/generate_pkgbuild.py`.
 
 Extend those lists when Zivid releases more packages.
+
+[ci-badge]: https://img.shields.io/azure-devops/build/zivid-devops/376f5fda-ba80-4d6c-aaaa-cbcd5e0ad6c0/2/master.svg
+[ci-url]: https://dev.azure.com/zivid-devops/arch-linux-pkgbuild-generator/_build/latest?definitionId=2&branchName=master

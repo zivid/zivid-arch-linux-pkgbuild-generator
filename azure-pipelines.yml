@@ -1,0 +1,18 @@
+jobs:
+- job: Linux
+  pool:
+    vmImage: ubuntu-16.04
+  strategy:
+    matrix:
+      ArchLinux:
+        os: 'archlinux/base'
+  steps:
+  - script: docker run
+              --volume $PWD:/host
+              --workdir /host/continuous-integration
+              --env "PYTHONDONTWRITEBYTECODE=1"
+              $(os)
+              bash -c "./setup.sh &&
+                       ./lint.sh &&
+                       ./test.sh"
+    displayName: 'Build and test'
