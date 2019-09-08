@@ -18,7 +18,7 @@ These packages can easily be installed by using one of the [AUR helpers](https:/
 ## Uploading new versions to AUR
 
 1. Update `zividVersion` in `scripts/generate_all_pkgbuilds.sh`
-2. Run the tests. See [.travis.yml](.travis.yml).
+2. Run the tests. See [azure-pipelines.yml](azure-pipelines.yml).
 3. Run `./scripts/update_aur.sh`.
 
 ## Registering new packages
