@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_DIR=$(realpath "$SCRIPT_DIR/..")
 VENV=$(mktemp --tmpdir --directory zivid-pkgbuild-build-env-XXXX) || exit $?
 
-zividVersion=1.4.0+956f554d-12
+zividVersion=1.5.0+63f281e2-26
 zividPackages="zivid zivid-studio zivid-tools"
 
 if [ -z "$1" ]; then
@@ -33,7 +33,7 @@ for zividPackage in $zividPackages; do
     generate $zividVersion $zividPackage $zividVersion || exit $?
 done
 
-generate $zividVersion telicam-sdk 2.0.0.1-1 || exit $?
+generate $zividVersion zivid-telicam-driver 2.0.0.1-1 || exit $?
 
 deactivate || exit $?
 

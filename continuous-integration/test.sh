@@ -12,7 +12,7 @@ fi
 
 sudo -u nobody $ROOT_DIR/scripts/generate_all_pkgbuilds.sh $TMP_DIR || exit $?
 
-function test_zivid-telicam-sdk {
+function test_zivid-telicam-driver {
     [[ -f /opt/TeliCamSDK/lib/libTeliCamApi_64.so ]] || exit 1
 }
 
@@ -39,7 +39,7 @@ function test_package {
     test_$package || exit $?
 }
 
-test_package zivid-telicam-sdk || exit $?
+test_package zivid-telicam-driver || exit $?
 test_package zivid || exit $?
 test_package zivid-studio || exit $?
 test_package zivid-tools || exit $?

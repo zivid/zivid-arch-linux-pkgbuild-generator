@@ -24,10 +24,17 @@ class Pkgbuild:
     description = "Defining the Future of 3D Machine Vision"
 
     dependencies = {
-        "zivid-telicam-sdk": (),
-        "zivid": ("zivid-telicam-sdk", "opencl-driver"),
+        "zivid-telicam-driver": (),
+        "zivid": ("zivid-telicam-driver", "opencl-driver"),
         "zivid-studio": ("zivid",),
         "zivid-tools": ("zivid",),
+    }
+
+    replaces = {
+        "zivid-telicam-driver": ("zivid-telicam-sdk",),
+        "zivid": (),
+        "zivid-studio": (),
+        "zivid-tools": (),
     }
 
     def __init__(self, base_dir: Path, template_file: Path):
@@ -49,6 +56,8 @@ class Pkgbuild:
             description=self.description,
             url=self.company_url,
             dependencies=" ".join(self.dependencies[package_name]),
+            conflicts=" ".join(self.replaces[package_name]),
+            provides=" ".join(self.replaces[package_name]),
             source=source_url,
             sha256sum=_sha256sum(source_url),
         )

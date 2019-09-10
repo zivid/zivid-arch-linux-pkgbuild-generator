@@ -9,6 +9,9 @@ license=('custom')
 url={url}
 
 depends=({dependencies})
+conflicts=({conflicts})
+provides=({provides})
+
 groups=(zivid-all)
 
 source=({source})
