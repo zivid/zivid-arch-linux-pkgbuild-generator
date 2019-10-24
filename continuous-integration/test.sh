@@ -31,7 +31,7 @@ function test_zivid-tools {
 function test_package {
     package=$1
     pushd $TMP_DIR/$package || exit $?
-    PKGEXT=.tar sudo -E -u nobody makepkg || exit $?
+    PKGEXT=.pkg.tar sudo -E -u nobody makepkg || exit $?
     pacman -U --noconfirm ./*$package*.tar || exit $?
     popd || exit $?
     rm -r ${TMP_DIR:?}/$package
