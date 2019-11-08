@@ -28,8 +28,13 @@ function test_zivid-tools {
     [[ -f /usr/bin/ZividListCameras ]] || exit 1
 }
 
+function test_zivid-genicam {
+    [[ -f /usr/lib/zivid/genicam/libZividGenTLProducer.cti ]] || exit 1
+}
+
 function test_package {
     package=$1
+    echo "Testing $package package"
     pushd $TMP_DIR/$package || exit $?
     PKGEXT=.pkg.tar sudo -E -u nobody makepkg || exit $?
     pacman -U --noconfirm ./*$package*.tar || exit $?
@@ -43,6 +48,7 @@ test_package zivid-telicam-driver || exit $?
 test_package zivid || exit $?
 test_package zivid-studio || exit $?
 test_package zivid-tools || exit $?
+test_package zivid-genicam || exit $?
 
 rmdir $TMP_DIR || exit $?
 
