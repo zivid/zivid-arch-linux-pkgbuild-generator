@@ -28,6 +28,7 @@ class Pkgbuild:
         "zivid": ("zivid-telicam-driver", "opencl-driver"),
         "zivid-studio": ("zivid",),
         "zivid-tools": ("zivid",),
+        "zivid-genicam": ("zivid",),
     }
 
     replaces = {
@@ -35,6 +36,7 @@ class Pkgbuild:
         "zivid": (),
         "zivid-studio": (),
         "zivid-tools": (),
+        "zivid-genicam": (),
     }
 
     def __init__(self, base_dir: Path, template_file: Path):
