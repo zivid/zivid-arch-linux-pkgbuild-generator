@@ -27,5 +27,5 @@ The list of packages to be uploaded is found in `scripts/generate_all_pkgbuilds.
 
 Extend those lists when Zivid releases more packages.
 
-[ci-badge]: https://img.shields.io/azure-devops/build/zivid-devops/376f5fda-ba80-4d6c-aaaa-cbcd5e0ad6c0/2/master.svg
-[ci-url]: https://dev.azure.com/zivid-devops/arch-linux-pkgbuild-generator/_build/latest?definitionId=2&branchName=master
+[ci-badge]: https://img.shields.io/azure-devops/build/zivid-devops/83d24458-0938-4d05-a0d0-104cd8dff5e3/7
+[ci-url]: https://dev.azure.com/zivid-devops/zivid-arch-linux-pkgbuild-generator/_build/latest?definitionId=7&branchName=master
