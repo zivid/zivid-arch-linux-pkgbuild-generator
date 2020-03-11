@@ -18,7 +18,7 @@ for packageDir in "$BUILD_DIR"/*; do
     pkgver=$(grep pkgver PKGBUILD |cut -d"'" -f2)
     makepkg --printsrcinfo > .SRCINFO || exit $?
     git add $(ls -A) || exit $?
-    git ci -m"Version $pkgver"
+    git commit -m"Version $pkgver"
     git push --set-upstream origin master || exit $?
     popd || exit $?
 done
