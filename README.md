@@ -19,7 +19,8 @@ These packages can easily be installed by using one of the [AUR helpers](https:/
 
 1. Update `zividVersion` in `scripts/generate_all_pkgbuilds.sh`
 2. Run the tests. See [azure-pipelines.yml](azure-pipelines.yml).
-3. Run `./scripts/update_aur.sh`.
+3. Make sure you have an AUR account with write access to the zivid repo and SSH public key.
+4. Run `./scripts/update_aur.sh`.
 
 ## Registering new packages
 
