@@ -20,6 +20,6 @@ black --check --diff "$pythonFiles" || exit $?
 
 echo Running shellcheck on:
 echo "$bashFiles"
-shellcheck -e SC1090,SC2086,SC2046 $bashFiles || exit $?
+shellcheck -x -e SC1090,SC2086,SC2046 $bashFiles || exit $?
 
 echo Success! ["$0"]

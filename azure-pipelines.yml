@@ -8,7 +8,7 @@ schedules:
 jobs:
 - job: Linux
   pool:
-    vmImage: ubuntu-16.04
+    vmImage: ubuntu-20.04
   strategy:
     matrix:
       ArchLinux:
@@ -22,4 +22,10 @@ jobs:
               bash -c "./setup.sh &&
                        ./lint.sh &&
                        ./test.sh"
-    displayName: 'Build and test'
+    displayName: 'Build, lint and test on Archlinux'
+- job: BuildDeploymentImage
+  pool:
+    vmImage: ubuntu-20.04
+  steps:
+  - script: docker build -t arch-deployment -f deployment/Dockerfile .
+    displayName: 'Test building of deployment image '
