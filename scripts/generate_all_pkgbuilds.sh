@@ -26,6 +26,7 @@ function generate {
 }
 
 python -m venv $VENV || exit $?
+# shellcheck disable=SC1091
 source $VENV/bin/activate || exit $?
 pip install --no-cache-dir -r $ROOT_DIR/requirements.txt || exit $?
 
