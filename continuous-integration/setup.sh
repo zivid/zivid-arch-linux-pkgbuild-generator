@@ -16,6 +16,7 @@ pacman -Syu --noconfirm --needed \
        python-black \
        python-pip \
        python-pylint \
+       python-isort \
        shellcheck \
        sudo \
        tar \
