@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_DIR=$(realpath "$SCRIPT_DIR/..")
 VENV=$(mktemp --tmpdir --directory zivid-pkgbuild-build-env-XXXX) || exit $?
 
-zividVersion=2.4.2+1a2e8cfb-1
+zividVersion=2.5.0+19fa6891-1
 zividPackages="zivid zivid-studio zivid-tools zivid-genicam"
 
 if [ -z "$1" ]; then
