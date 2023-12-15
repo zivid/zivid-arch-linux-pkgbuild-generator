@@ -45,7 +45,7 @@ class Pkgbuild:
             self.template = in_file.read()
 
     def source_url(self, release_version, package_name, package_version):
-        return f"https://downloads.zivid.com/sdk/releases/{release_version}/u18/{package_name}_{package_version}_amd64.deb"
+        return f"https://downloads.zivid.com/sdk/releases/{release_version}/u20/{package_name}_{package_version}_amd64.deb"
 
     def configure(self, release_version, ubuntu_package_name, package_version):
         source_url = self.source_url(
