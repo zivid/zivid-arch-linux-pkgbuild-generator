@@ -20,5 +20,5 @@ sha256sums=({sha256sum})
 options=(!strip)
 
 package() {{
-    bsdtar -xf data.tar.*z -C "${{pkgdir}}"
+    bsdtar -xf data.tar.* -C "${{pkgdir}}"
 }}
