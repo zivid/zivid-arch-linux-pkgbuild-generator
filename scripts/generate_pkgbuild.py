@@ -24,16 +24,14 @@ class Pkgbuild:
     description = "Defining the Future of 3D Machine Vision"
 
     dependencies = {
-        "zivid-telicam-driver": (),
-        "zivid": ("zivid-telicam-driver", "opencl-driver"),
+        "zivid": ("opencl-driver",),
         "zivid-studio": ("zivid",),
         "zivid-tools": ("zivid",),
         "zivid-genicam": ("zivid",),
     }
 
     replaces = {
-        "zivid-telicam-driver": ("zivid-telicam-sdk",),
-        "zivid": (),
+        "zivid": ("zivid-telicam-driver",),
         "zivid-studio": (),
         "zivid-tools": (),
         "zivid-genicam": (),

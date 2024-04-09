@@ -8,6 +8,7 @@ fi
 
 pacman -Syu --noconfirm --needed \
        awk \
+       debugedit \
        fakeroot \
        file \
        flake8 \
