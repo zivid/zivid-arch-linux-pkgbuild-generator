@@ -1,0 +1,25 @@
+name: CI
+on:
+  schedule:
+    - cron: '15 22 * * *'
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    container:
+      image: archlinux/archlinux:base
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build, lint and test on Archlinux
+        run: |
+          export PYTHONDONTWRITEBYTECODE=1
+          cd continuous-integration
+          ./setup.sh
+          ./lint.sh
+          ./test.sh
+  build-deployment-image:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test building of deployment image
+        run: docker build -t arch-deployment -f deployment/Dockerfile .
