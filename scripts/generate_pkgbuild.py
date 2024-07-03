@@ -31,7 +31,7 @@ class Pkgbuild:
     }
 
     replaces = {
-        "zivid": ("zivid-telicam-driver",),
+        "zivid": (),
         "zivid-studio": (),
         "zivid-tools": (),
         "zivid-genicam": (),
