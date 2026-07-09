@@ -1,0 +1,23 @@
+# Maintainer: John Ingve Schjølberg <john.schjolberg@zivid.com>
+
+# Meta-package for the Zivid SDK. The GPU backend lives in the
+# `zivid-opencl` and `zivid-cuda` packages, both of which provide the virtual
+# `zivid-backend`. This package owns no files and depends on `zivid-backend`,
+# so installing or upgrading `zivid` requires the user to choose a backend
+# rather than silently defaulting to one.
+
+pkgname={name}
+pkgver='{pkgver}'
+pkgrel=1
+pkgdesc='{description}'
+arch=('x86_64')
+license=('custom')
+url={url}
+
+depends=({dependencies})
+
+groups=(zivid-all)
+
+package() {{
+    :
+}}

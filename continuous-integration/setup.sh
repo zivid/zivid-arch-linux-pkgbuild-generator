@@ -14,6 +14,7 @@ pacman -Syu --noconfirm --needed \
        flake8 \
        grep \
        intel-compute-runtime \
+       nvidia-utils \
        python-black \
        python-pip \
        python-pylint \

@@ -16,6 +16,14 @@ function test_zivid {
     [[ -f /usr/lib/libZividCore.so ]] || exit 1
 }
 
+function test_zivid-opencl {
+    test_zivid
+}
+
+function test_zivid-cuda {
+    test_zivid
+}
+
 function test_zivid-studio {
     [[ -f /usr/bin/ZividStudio ]] || exit 1
 }
@@ -40,6 +48,9 @@ function test_package {
     test_$package || exit $?
 }
 
+test_package zivid-cuda || exit $?
+pacman -R --noconfirm zivid-cuda || exit $?
+test_package zivid-opencl || exit $?
 test_package zivid || exit $?
 test_package zivid-studio || exit $?
 test_package zivid-tools || exit $?
