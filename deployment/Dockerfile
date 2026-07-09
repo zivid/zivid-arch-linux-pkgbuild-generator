@@ -8,7 +8,8 @@ RUN ./setup.sh
 RUN pacman -Syu --noconfirm --needed git openssh
  
 # Add user for deployment
-RUN useradd -ms /bin/bash deploymentuser
+ARG UID=1000
+RUN useradd -ms /bin/bash --uid $UID deploymentuser
 USER deploymentuser
 
 # Copy entire build context into the container
