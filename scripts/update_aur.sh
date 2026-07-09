@@ -7,7 +7,7 @@ source /etc/os-release || exit $?
 
 if [ $ID != "arch" ]; then
     # If not on Arch, build Docker image and re-run this script inside container
-    docker build -t arch-deployment -f ${ROOT_DIR}/deployment/Dockerfile . || exit $?
+    docker build -t arch-deployment --build-arg UID=$(id -u) -f ${ROOT_DIR}/deployment/Dockerfile . || exit $?
     docker run --rm \
         --volume ~/.ssh:/home/deploymentuser/.ssh \
         --volume ~/.gitconfig:/home/deploymentuser/.gitconfig \
@@ -36,4 +36,3 @@ else
         popd || exit $?
     done
 fi
-
