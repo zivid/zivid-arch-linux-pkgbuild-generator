@@ -5,7 +5,7 @@ ROOT_DIR=$(realpath "$SCRIPT_DIR/..")
 VENV=$(mktemp --tmpdir --directory zivid-pkgbuild-build-env-XXXX) || exit $?
 
 zividVersion=2.18.0+1b44dbef-1
-zividPackages="zivid zivid-cuda zivid-opencl zivid-studio zivid-tools zivid-genicam"
+zividPackages="zivid-cuda zivid-opencl zivid-studio zivid-tools zivid-genicam"
 
 if [ -z "$1" ]; then
     echo Usage: $0 out-dir
@@ -20,7 +20,6 @@ function generate {
     python $SCRIPT_DIR/generate_pkgbuild.py \
            --out-dir $OUT_DIR \
            --template $ROOT_DIR/PKGBUILD.in \
-           --meta-template $ROOT_DIR/PKGBUILD-meta.in \
            --release-version $releaseVersion \
            --package $packageName \
            --package-version $packageVersion || exit $?
