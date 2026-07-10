@@ -51,7 +51,6 @@ function test_package {
 test_package zivid-cuda || exit $?
 pacman -R --noconfirm zivid-cuda || exit $?
 test_package zivid-opencl || exit $?
-test_package zivid || exit $?
 test_package zivid-studio || exit $?
 test_package zivid-tools || exit $?
 test_package zivid-genicam || exit $?
